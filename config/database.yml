@@ -19,3 +19,6 @@ production:
   database: balticit_prod
   username: root
   password: ''
+
+cucumber:
+  <<: *test

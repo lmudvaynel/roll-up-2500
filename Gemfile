@@ -33,6 +33,24 @@ group :development do
   gem 'capistrano-helpers'
 end
 
+group :development, :test do
+  gem 'guard-rspec'
+  gem 'guard-cucumber'
+  gem 'rspec-rails'
+  gem 'guard-spork', :github => 'guard/guard-spork'
+  gem 'spork'
+end
+
+group :test do
+  gem 'cucumber'
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber_factory'
+  gem 'cucumber-websteps'
+
+  gem 'capybara'
+  gem 'database_cleaner'
+end
+
 gem 'jquery-rails'
 gem 'unicorn'
 gem 'ffaker'

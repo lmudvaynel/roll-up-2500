@@ -26,7 +26,10 @@ ActiveAdmin.register StandType do
   		f.input :position 
 			f.input :content   
 			f.input :complect_info
-			f.input :image, as: :file
+			f.input :image, :as => :file, :hint => f.object.image.present? \
+        ? f.template.image_tag(f.object.image.url)
+        : f.template.content_tag(:span, "Image is missing")
+
   		f.input :hidden
 
 			f.has_many :stand_benefits do |sb|

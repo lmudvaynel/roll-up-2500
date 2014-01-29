@@ -19,7 +19,7 @@ ActiveAdmin.register Stand do
     #end
 		column :hidden
 		default_actions
-	end  
+	end
 
 	form do |f|
   	f.inputs do
@@ -28,7 +28,10 @@ ActiveAdmin.register Stand do
   		f.input :position 
 			f.input :content   
   		f.input :hidden
-      f.input :image, as: :file
+
+      f.input :image, :as => :file, :hint => f.object.image.present? \
+        ? f.template.image_tag(f.object.image.url)
+        : f.template.content_tag(:span, "Image is missing")
 
   		f.has_many :stand_types do |st|
 				st.input :name
