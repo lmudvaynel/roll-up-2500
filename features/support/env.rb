@@ -5,7 +5,14 @@
 # files.
 
 require 'cucumber/rails'
+require 'spork'
 
+Spork.prefork do
+  ENV["RAILS_ENV"] ||= "test"
+  require File.expand_path(File.dirname(__FILE__) + '/../../config/environment')
+  require 'cucumber/formatter/unicode' # Remove this line if you don't want Cucumber Unicode support
+  require 'cucumber/rails/rspec'
+end
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
 # selectors in your step definitions to use the XPath syntax.
