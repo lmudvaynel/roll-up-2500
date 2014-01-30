@@ -18,7 +18,7 @@ set :user, "rvm_user"
 set :use_sudo, false
 
 set :rvm_type, :system 
-set :rvm_ruby_string, "ruby-1.9.3-head"
+set :rvm_ruby_string, "ruby-2.0.0-head"
 set :rvm_install_with_sudo, true
 set :rvm_autolibs_flag, "readonly"
 
