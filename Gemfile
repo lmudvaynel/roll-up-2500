@@ -9,7 +9,7 @@ gem 'mysql2'
 gem 'friendly_id'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'ancestry'
-gem "paperclip", :git => "http://github.com/thoughtbot/paperclip.git"
+gem 'paperclip'
 
 # Gems used only for assets and not required
 # in production environments by default.
